@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>mainpage</title>
+    <!--style-->
+    <link rel="icon" href="https://t1.daumcdn.net/cfile/tistory/99FC5A335B27C6CA2F" type="image/x-icon">
+
+    <link rel="stylesheet" href="{{url_for('static', filename='mainpage.css')}}">
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script src="https://unpkg.com/bibtex-js-parser/umd/bibtex-js-parser.js"></script> <!--for using bibtex parser library -->
+    <script type="text/javascript" src="../static/a.json"></script>
+
+
+</head>
+<body>
+    <!-- <script type="text/javascript" src="{{url_for('static', filename='filewrite.js')}}"></script> -->
+    
+    <header> 
+        <a href="file:///Users/seongeun/vscode/capd/test.html"> <h1>Service Name</h1> </a>
+        <div class ="searchbar"> 
+            <input type="keywords" placeholder="type to research">
+            <button>search</button>
+        </div>
+    </header>
+    <script>
+        $(document).ready(function(){
+      
+            $('#main_menu > li > a').click(function(){
+              $(this).next($('.snd_menu')).slideToggle('fast');
+            })
+            // 버튼 클릭 시 색 변경
+            $('li > a').focus(function(){
+              $(this).addClass('selec');
+            })
+            $("li > a").blur(function(){
+              $(this).removeClass('selec');
+            })
+            
+          })
+    </script> 
+    <!--menu--> 
+    <aside class="side">
+        <ul id="main_menu">
+            <li><a href="#" id="sort">SORT BY</a>
+            <ul class="snd_menu sub_menu">
+              <li><a href="#" onclick="sortingmethod(this)">Latest</a></li>
+              <li><a href="#" onclick="sortingmethod(this)">Number of citations</a></li>
+            </ul>
+            </li>
+          </ul>
+          <ul id="main_menu">
+            <li><a href="#" id="fieldsOfStudy">FIELDS OF STUDY</a>
+            <ul class="snd_menu sub_menu">
+              <li><a href="#" onclick="field(this)">Agricultural and Food Sciences</a></li>
+              <li><a href="#" onclick="field(this)">Art</a></li>
+              <li><a href="#" onclick="field(this)">Biology</a></li>
+              <li><a href="#" onclick="field(this)">Business</a></li>
+              <li><a href="#" onclick="field(this)">Computer Science</a></li>
+              <li><a href="#" onclick="field(this)">Chemistry</a></li>
+              <li><a href="#" onclick="field(this)">Economics</a></li>
+              <li><a href="#" onclick="field(this)">Education</a></li>
+              <li><a href="#" onclick="field(this)">Engineering</a></li>
+              <li><a href="#" onclick="field(this)">Environmental Science</a></li>
+              <li><a href="#" onclick="field(this)">Geography</a></li>
+              <li><a href="#" onclick="field(this)">Geology</a></li>
+              <li><a href="#" onclick="field(this)">History</a></li>
+              <li><a href="#" onclick="field(this)">Law</a></li>
+              <li><a href="#" onclick="field(this)">Linguistics</a></li>
+              <li><a href="#" onclick="field(this)"> Materials Science</a></li>
+              <li><a href="#" onclick="field(this)">Mathematics</a></li>
+              <li><a href="#" onclick="field(this)">Medicine</a></li>
+              <li><a href="#" onclick="field(this)">Philosophy</a></li>
+              <li><a href="#" onclick="field(this)">Physics</a></li>
+              <li><a href="#" onclick="field(this)">Political Science</a></li>
+              <li><a href="#" onclick="field(this)">Psychology</a></li>
+              <li><a href="#" onclick="field(this)">Sociology</a></li>
+            </ul>
+            </li>
+          </ul>
+          <ul id="main_menu">
+            <li><a href="#" id="dateRange">DATE RANGE</a>
+            <ul class="snd_menu sub_menu">
+              <li><a href="#" onclick="date(this)">This year</a></li>
+              <li><a href="#" onclick="date(this)">Last 5 years</a></li>
+              <li><a href="#" onclick="date(this)">Last 10 years</a></li>
+            </ul>
+            </li>
+        </ul>
+    </aside>
+
+
+    <script> 
+
+        var dataFromServer = JSON.parse(JSON.stringify(data));
+        // console.log(jsondata);
+        // const data_len = dataFromServer.length; //JSON inside array //data+len== keywords포함 논문의 개수
+
+        var bib ='';
+        dataFromServer.forEach(function(data,idx){ //for(let i=0;i<data_len;i++)와 동일 //array내 원소(json)을 하나씩
+            bib += data.bibtex + ',\n'; //bibtex를 str으로 저장
+        });
+        console.log(bib);
+        // const bibJ = BibtexParser.parseToJSON(bib); 
+        const bib_str = BibtexParser.parseToJSONString(bib); //bibtex형식을 dictionary형식으로 바꾸고 str으로 저장
+        const obj = JSON.parse(bib_str); //str을 json으로 변환 -> dictionary를 사용하기 위함
+
+        console.log(obj);
+        // console.log(obj.length);
+        var len=obj.length;
+        console.log(typeof(obj));
+        for(let i =0;i<len;i++){
+            // $('.keyword_paper_title_1').empty(); 
+            $.ajax({
+                
+            })
+            $('.keyword_paper_title_1').val(obj[i].title);
+            // $('.keyword_paper_title_1').append(obj[i].title);
+            console.log(obj[i].title)
+        
+            //     const key= document.createElement('div');
+        //     key.innerHTML=
+        //         `<div class="keyclass">
+        //         <h4 class="keypapertitile"> ${obj[i].title}</h4>
+        //         </div>`
+        //         // console.log(obj[i].title);
+        //     // $('.keyword_paper_title').append(obj[i].title);
+
+        }
+        
+    </script>
+
+    <main>
+        <article class="keyword-papers">
+            <!--A논문-->
+            <article class="keyword-paper"> 
+                <div class="keyword_paper_title_1"> </div> 
+                <div class = "keypaper-info"> 
+                    <span class="item">Kim</span>
+                    <span class = "item"> 31/05/2020 </span>
+                    <button><a href="https://aclanthology.org/N19-1423.pdf" class="item">pdf</a></button>
+                    <button class="item">cite'</button>
+                </div>
+
+                <section class="citations">
+                    <!--인용문1-->
+                    <article class="citation-paper">
+                        <input type="checkbox" id="ck">
+                        <label for="ck"  id ="citationbox">Long Short-Term Memory (LSTM) Unit LSTM is an extension of the RNN standard which reduces the problem of vanishing gradient [7].
+                            <br><br>Another study that discusses the classification process of English sentences using the Convolution Neural Networks (CNN) model [7].
+                            <br><br>However, there are studies that use CNN for Natural Language Processing (NLP) cases [7].
+                        </label>   
+                        <div class="citation-paper-info">
+                            <button><a href="https://aclanthology.org/N19-1423.pdf">link to paper's info</a></button>
+                        </div>           
+                    </article>
+
+
+                    <!--인용문2-->
+                    <article class="citation-paper">
+                        <input type="checkbox" id="ck">
+                        <label for="ck"  id ="citationbox"> As shown in Kim (2014), a dropout probability p of 0.5 is optimal for most scenarios.
+                                Three Input layers, one output layer and four hidden layers (Kim, 2014).
+                        </label>
+                        <div class="citation-paper-info">
+                            <button><a href="https://aclanthology.org/N19-1423.pdf">link to paper's info</a></button>
+                        </div>                   
+                    </article>
+
+                     <!--인용문3-->
+                     <article class="citation-paper" >
+                        <input type="checkbox" id="ck">
+                        <label for="ck"  id ="citationbox"> Figure 1: Taken from ”Convolutional neural networks for sentence classification” [7]
+
+                        </label>
+                        <div class="citation-paper-info">
+                            <button><a href="https://aclanthology.org/N19-1423.pdf">link to paper's info</a></button>
+                        </div>                   
+                    </article>
+                     <!--인용문4-->
+                     <article class="citation-paper">
+                        <input type="checkbox" id="ck">
+                        <label for="ck"  id ="citationbox"> Recently, several papers have been published that involve convolutional neural networks (CNNs) for performing text classification without the need for manual feature engineering that achieved very promising results [8, 9].</p>
+                        </label>
+                        <div class="citation-paper-info">
+                            <button><a href="https://aclanthology.org/N19-1423.pdf">link to paper's info</a></button>
+                            <button>cite'</button>
+                            <!-- <p class="arrow_box">this is science papers "a".. ex)Dissecting Contextual Word Embeddings: Architecture and Representation   
+                                <br>14/01/2023  Ohchaemin</p> -->
+                        </div>                   
+                    </article>
+                     <!--인용문5-->
+                     <article class="citation-paper">
+                        <input type="checkbox">
+                        <div class="citation-box" >
+                            <p class="citation"> …for various tasks in natural language processing, such as language modeling (Mikolov et al., 2010), text classification (Socher et al., 2013; Kim, 2014; Blunsom et al., 2014; Lee and Dernoncourt, 2016), question answering (Weston et al., 2015; Wang and Nyberg, 2015), machine translation… </p>
+                        </div>
+                        <div class="citation-paper-info">
+                            <button><a href="https://aclanthology.org/N19-1423.pdf">link to paper's info</a></button>
+                            <button>cite'</button>
+                            <!-- <p class="arrow_box">this is science papers "a".. ex)Dissecting Contextual Word Embeddings: Architecture and Representation   
+                                <br>14/01/2023  Ohchaemin</p> -->
+                        </div>                   
+                    </article>
+                    <article class="citation-paper">
+                        <input type="checkbox">
+                        <div class="citation-box">
+                            <p class="citation">Although Adam converges faster, it has been shown that with some tuning of the learning rate SGD can outperform Adam (Zhang and Wallace, 2015). </p>
+                        </div>
+                        <div class="citation-paper-info">
+                            <button><a href="https://aclanthology.org/N19-1423.pdf">link to paper's info</a></button>
+                            <button>cite'</button>
+                            <!-- <p class="arrow_box">this is science papers "a".. ex)Dissecting Contextual Word Embeddings: Architecture and Representation   
+                                <br>14/01/2023  Ohchaemin</p> -->
+                        </div>                   
+                    </article>
+                    <!--인용문2-->
+                    <article class="citation-paper">
+                        <input type="checkbox">
+                        <div class="citation-box">
+                            <p class="citation">Recently, several papers have been published that involve convolutional neural networks (CNNs) for performing text classification without the need for manual feature engineering that achieved very promising results [8, 9].</p>
+                        </div>
+                        <div class="citation-paper-info">
+                            <button><a href="https://aclanthology.org/N19-1423.pdf">link to paper's info</a></button>
+                            <button>cite'</button>
+                            <!-- <p class="arrow_box">this is science papers "a".. ex)Dissecting Contextual Word Embeddings: Architecture and Representation   
+                                <br>14/01/2023  Ohchaemin</p> -->
+                        </div>                   
+                    </article>
+
+                     <!--인용문3-->
+                    <article class="citation-paper">
+                        <input type="checkbox">
+                        <div class="citation-box">
+                            <p class="citation">A good start is [34] where authors evaluate different hyper parameter settings on various NLP problem.</p>
+                        </div>
+                        <div class="citation-paper-info">
+                            <button><a href="https://aclanthology.org/N19-1423.pdf">link to paper's info</a></button>
+                            <button>cite'</button>
+                            <!-- <p class="arrow_box">this is science papers "a".. ex)Dissecting Contextual Word Embeddings: Architecture and Representation   
+                                <br>14/01/2023  Ohchaemin</p> -->
+                        </div>                   
+                    </article>
+                     <!--인용문4-->
+                    <article class="citation-paper">
+                        <input type="checkbox">
+                        <div class="citation-box">
+                            <p class="citation"> Zhang and Wallace[20] conducted a sensitive analysis of one-</p>
+                        </div>
+                        <div class="citation-paper-info">
+                            <button><a href="https://aclanthology.org/N19-1423.pdf">link to paper's info</a></button>
+                            <button>cite'</button>
+                            <!-- <p class="arrow_box">this is science papers "a".. ex)Dissecting Contextual Word Embeddings: Architecture and Representation   
+                                <br>14/01/2023  Ohchaemin</p> -->
+                        </div>                   
+                    </article>
+
+                   
+                </section>
+                 <!--expand box -->
+                 <div id = "js-btn-wrap" class="expandbox">
+                    <a href="javascript:;" class="button"> expand </a>
+                </div> 
+            </article>
+            
+
+            <!--B논문-->
+            <article class="keyword-paper">
+                <h4 class="keyword_paper_title">gdse</h4> 
+                <div class = "keypaper-info"> 
+                    <span class="item">Oh</span>
+                    <span class = "item"> 31/05/2018 </span>
+                    <button><a href="https://aclanthology.org/N19-1423.pdf" class="item">pdf</a></button>
+                    <button class="item">cite'</button>
+                </div>
+
+                <section class="citations">
+                    <!--인용문1-->
+                    <article class="citation-paper">
+                        <input type="checkbox">
+                        <div class="citation-box">
+                            <p class="citation">Although Adam converges faster, it has been shown that with some tuning of the learning rate SGD can outperform Adam (Zhang and Wallace, 2015). </p>
+                        </div>
+                        <div class="citation-paper-info">
+                            <button><a href="https://aclanthology.org/N19-1423.pdf">link to paper's info</a></button>
+                            <button>cite'</button>
+                            <!-- <p class="arrow_box">this is science papers "a".. ex)Dissecting Contextual Word Embeddings: Architecture and Representation   
+                                <br>14/01/2023  Ohchaemin</p> -->
+                        </div>                   
+                    </article>
+                    <!--인용문2-->
+                    <article class="citation-paper">
+                        <input type="checkbox">
+                        <div class="citation-box">
+                            <p class="citation">Recently, several papers have been published that involve convolutional neural networks (CNNs) for performing text classification without the need for manual feature engineering that achieved very promising results [8, 9].</p>
+                        </div>
+                        <div class="citation-paper-info">
+                            <button><a href="https://aclanthology.org/N19-1423.pdf">link to paper's info</a></button>
+                            <button>cite'</button>
+                            <!-- <p class="arrow_box">this is science papers "a".. ex)Dissecting Contextual Word Embeddings: Architecture and Representation   
+                                <br>14/01/2023  Ohchaemin</p> -->
+                        </div>                   
+                    </article>
+
+                     <!--인용문3-->
+                    <article class="citation-paper">
+                        <input type="checkbox">
+                        <div class="citation-box">
+                            <p class="citation">A good start is [34] where authors evaluate different hyper parameter settings on various NLP problem.</p>
+                        </div>
+                        <div class="citation-paper-info">
+                            <button><a href="https://aclanthology.org/N19-1423.pdf">link to paper's info</a></button>
+                            <button>cite'</button>
+                            <!-- <p class="arrow_box">this is science papers "a".. ex)Dissecting Contextual Word Embeddings: Architecture and Representation   
+                                <br>14/01/2023  Ohchaemin</p> -->
+                        </div>                   
+                    </article>
+                     <!--인용문4-->
+                    <article class="citation-paper">
+                        <input type="checkbox">
+                        <div class="citation-box">
+                            <p class="citation"> Zhang and Wallace[20] conducted a sensitive analysis of one-</p>
+                        </div>
+                        <div class="citation-paper-info">
+                            <button><a href="https://aclanthology.org/N19-1423.pdf">link to paper's info</a></button>
+                            <button>cite'</button>
+                            <!-- <p class="arrow_box">this is science papers "a".. ex)Dissecting Contextual Word Embeddings: Architecture and Representation   
+                                <br>14/01/2023  Ohchaemin</p> -->
+                        </div>                   
+                    </article>
+                </section>
+            </article>
+    
+        </article>
+
+        <script>
+
+        </script>
+
+
+
+        <script> //top
+            function clickme() {
+                window.scrollTo({top:0, left:0, behavior:'smooth'});
+            }
+        </script>
+        <script>
+            const writeToTextFile = (text, fileName) => {
+                const numchecked =$('input:checkbox:checked').length;
+                console.log(numchecked);
+                // 체크된 개수만큼 반복문으로 인용문과 bibtex 를 얻어옴
+                // 체크된 인용문을 알아야 함.
+                
+                console.log('hi');
+                // console.log(checked);
+                var exportval = "";
+                $("input:checkbox:checked").each(function() { //function
+                    console.log('in checked func');
+                    var chk=$(this).val();
+                    console.log($('input:checkbox').next('label').text());
+                    // if(exportval==""){
+                    //     exportval = $("#la > div > p").text();
+                    //     console.log("making first exportval");
+                    //     console.log(exportval);
+                        
+                    // }else{
+                    //     exportval = exportval +" \n \n " + $("#la > div > p").val();
+                    // }
+                });
+                // console.log(exportval);
+                
+                
+                
+                
+                let textFile = null;
+                const makeTextFile = (text) => {
+                    const data = new Blob([text], {
+                        type: 'text/plain',
+                    });
+                    if (textFile !== null) {
+                        window.URL.revokeObjectURL(textFile);
+                    }
+                    textFile = window.URL.createObjectURL(data);
+                    return textFile;
+                };
+                const link = document.createElement('a');
+                link.setAttribute('download', fileName);
+                link.href = makeTextFile(text);
+                link.click();
+            };
+            </script>
+            
+
+        <div class="rightside">
+            <input id="export" type="button" value="EXPORT" onclick="writeToTextFile('aaa...','bibtex_including_checked_citations.txt')""> <!--여기서 파일에 쓸 내용을 넣네...-->
+            <input id="top" type="button" value="TOP" onclick="clickme()">
+        </div>
+
+    </main>
+    <footer>
+        <p>about us</p>
+        <p>contect: tjddms5311@naver.com</p>
+    </footer>
+   
+</body>
+
+</html>

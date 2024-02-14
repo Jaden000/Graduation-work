@@ -1,0 +1,222 @@
+
+data = [
+    {
+        "paper_id": "1f6ba0782862ec12a5ec6d7fb608523d55b0c6ba",
+        "bibtex": "@inproceedings{Kim2014ConvolutionalNN,\n  title={Convolutional Neural Networks for Sentence Classification},\n  author={Yoon Kim},\n  booktitle={Conference on Empirical Methods in Natural Language Processing},\n  year={2014}\n}",
+        "pdf_url": "https://www.aclweb.org/anthology/D14-1181.pdf",
+        "citations": [
+            {
+                "citing_paper_id": "f759b8d486634668f2814f3f01dde73084999984",
+                "citation": [
+                    "Long Short-Term Memory (LSTM) Unit LSTM is an extension of the RNN standard which reduces the problem of vanishing gradient [7].",
+                    "Where x\uf0ce R and l are the length of sentence [7].",
+                    "Another study that discusses the classification process of English sentences using the Convolution Neural Networks (CNN) model [7].",
+                    "However, there are studies that use CNN for Natural Language Processing (NLP) cases [7]."
+                ]
+            },
+            {
+                "citing_paper_id": "731b43a3d4bddbb17feb43ebb58fcc598e7c83cc",
+                "citation": [
+                    "As shown in Kim (2014), a dropout probability p of 0.5 is optimal for most scenarios.",
+                    "Three Input layers, one output layer and four hidden layers (Kim, 2014)."
+                ]
+            },
+            {
+                "citing_paper_id": "5db1d38d07786ca0e82e170a894d608531fd3296",
+                "citation": [
+                    "Figure 1: Taken from \u201dConvolutional neural networks for sentence classification\u201d [7]"
+                ]
+            },
+            {
+                "citing_paper_id": "0ab0956bd459606d9157889af12c3463a3694ca2",
+                "citation": [
+                    ", a convolutional neural network (CNN) from the paper \"Convolutional neural networks for sentence classification\" by [8]."
+                ]
+            },
+            {
+                "citing_paper_id": "f5b28cbee964d4339e6c56d057aff6735eca2289",
+                "citation": [
+                    "Recently, several papers have been published that involve convolutional neural networks (CNNs) for performing text classification without the need for manual feature engineering that achieved very promising results [8, 9]."
+                ]
+            },
+            {
+                "citing_paper_id": "8272fe0039ab8c5a2387d62d6135387dbe352927",
+                "citation": [
+                    "\u2026for various tasks in natural language processing, such as language modeling (Mikolov et al., 2010), text classification (Socher et al., 2013; Kim, 2014; Blunsom et al., 2014; Lee and Dernoncourt, 2016), question answering (Weston et al., 2015; Wang and Nyberg, 2015), machine translation\u2026"
+                ]
+            },
+            {
+                "citing_paper_id": "64eb312db70d97bf277b461ba0b34c9650f96859",
+                "citation": [
+                    "9: CNN for Sentence Classification, picture is taken from [35].",
+                    "Article [35] evaluates CNNs on various classification NLP problems."
+                ]
+            },
+            {
+                "citing_paper_id": "09bb75effb5bae628722e767048171085620ef8d",
+                "citation": [
+                    "Also, compared with other deep feedforward neural networks, CNN replaces conventional neuron matrix multiplication by convolution [45, 46], which can significantly reduce the number of unknown weights and is more suitable for the image and signal recognition [47]."
+                ]
+            },
+            {
+                "citing_paper_id": "7469f2d8cefd363cdd007aa82b8cfd0ad4f5a8bd",
+                "citation": [
+                    "Apesar de terem sido criadas inicialmente para vis\u00e3o computacional, elas t\u00eam demonstrado efici\u00eancia em tarefas de processamento de linguagem natural (NLP) [3]."
+                ]
+            },
+            {
+                "citing_paper_id": "9566528bf502e43914c4076fb71e48c0966d6622",
+                "citation": [
+                    ", 2016), TextCNN (Kim, 2014) and TextRCNN (Lai et al.",
+                    ", 2016), TextCNN (Kim, 2014) and HMCN (Wehrmann et al."
+                ]
+            }
+        ]
+    },
+    {
+        "paper_id": "592046d0d45c1fd823ff6b2a4c4162a96d7ecff8",
+        "bibtex": "@inproceedings{Kim2014ConvolutionalNN,\n  title={you dont know baby},\n  author={Yoon Kim},\n  booktitle={Conference on Empirical Methods in Natural Language Processing},\n  year={2014}\n}",
+        "pdf_url": "https://www.aclweb.org/anthology/D14-1181.pdf",
+        "citations": [
+            {
+                "citing_paper_id": "f759b8d486634668f2814f3f01dde73084999984",
+                "citation": [
+                    "Long Short-Term Memory (LSTM) Unit LSTM is an extension of the RNN standard which reduces the problem of vanishing gradient [7].",
+                    "Where x\uf0ce R and l are the length of sentence [7].",
+                    "Another study that discusses the classification process of English sentences using the Convolution Neural Networks (CNN) model [7].",
+                    "However, there are studies that use CNN for Natural Language Processing (NLP) cases [7]."
+                ]
+            },
+            {
+                "citing_paper_id": "731b43a3d4bddbb17feb43ebb58fcc598e7c83cc",
+                "citation": [
+                    "As shown in Kim (2014), a dropout probability p of 0.5 is optimal for most scenarios.",
+                    "Three Input layers, one output layer and four hidden layers (Kim, 2014)."
+                ]
+            },
+            {
+                "citing_paper_id": "5db1d38d07786ca0e82e170a894d608531fd3296",
+                "citation": [
+                    "Figure 1: Taken from \u201dConvolutional neural networks for sentence classification\u201d [7]"
+                ]
+            },
+            {
+                "citing_paper_id": "0ab0956bd459606d9157889af12c3463a3694ca2",
+                "citation": [
+                    ", a convolutional neural network (CNN) from the paper \"Convolutional neural networks for sentence classification\" by [8]."
+                ]
+            },
+            {
+                "citing_paper_id": "f5b28cbee964d4339e6c56d057aff6735eca2289",
+                "citation": [
+                    "Recently, several papers have been published that involve convolutional neural networks (CNNs) for performing text classification without the need for manual feature engineering that achieved very promising results [8, 9]."
+                ]
+            },
+            {
+                "citing_paper_id": "8272fe0039ab8c5a2387d62d6135387dbe352927",
+                "citation": [
+                    "\u2026for various tasks in natural language processing, such as language modeling (Mikolov et al., 2010), text classification (Socher et al., 2013; Kim, 2014; Blunsom et al., 2014; Lee and Dernoncourt, 2016), question answering (Weston et al., 2015; Wang and Nyberg, 2015), machine translation\u2026"
+                ]
+            },
+            {
+                "citing_paper_id": "64eb312db70d97bf277b461ba0b34c9650f96859",
+                "citation": [
+                    "9: CNN for Sentence Classification, picture is taken from [35].",
+                    "Article [35] evaluates CNNs on various classification NLP problems."
+                ]
+            },
+            {
+                "citing_paper_id": "09bb75effb5bae628722e767048171085620ef8d",
+                "citation": [
+                    "Also, compared with other deep feedforward neural networks, CNN replaces conventional neuron matrix multiplication by convolution [45, 46], which can significantly reduce the number of unknown weights and is more suitable for the image and signal recognition [47]."
+                ]
+            },
+            {
+                "citing_paper_id": "7469f2d8cefd363cdd007aa82b8cfd0ad4f5a8bd",
+                "citation": [
+                    "Apesar de terem sido criadas inicialmente para vis\u00e3o computacional, elas t\u00eam demonstrado efici\u00eancia em tarefas de processamento de linguagem natural (NLP) [3]."
+                ]
+            },
+            {
+                "citing_paper_id": "9566528bf502e43914c4076fb71e48c0966d6622",
+                "citation": [
+                    ", 2016), TextCNN (Kim, 2014) and TextRCNN (Lai et al.",
+                    ", 2016), TextCNN (Kim, 2014) and HMCN (Wehrmann et al."
+                ]
+            }
+        ]
+    },
+    {
+        "paper_id": "93b66e394afedcd345148ca8b9ecc1e6edf2c042",
+        "bibtex": "@inproceedings{Kim2014ConvolutionalNN,\n  title={mathmatics},\n  author={Yoon Kim},\n  booktitle={Conference on Empirical Methods in Natural Language Processing},\n  year={2014}\n}",
+        "pdf_url": "https://www.aclweb.org/anthology/D14-1181.pdf",
+        "citations": [
+            {
+                "citing_paper_id": "f759b8d486634668f2814f3f01dde73084999984",
+                "citation": [
+                    "Long Short-Term Memory (LSTM) Unit LSTM is an extension of the RNN standard which reduces the problem of vanishing gradient [7].",
+                    "Where x\uf0ce R and l are the length of sentence [7].",
+                    "Another study that discusses the classification process of English sentences using the Convolution Neural Networks (CNN) model [7].",
+                    "However, there are studies that use CNN for Natural Language Processing (NLP) cases [7]."
+                ]
+            },
+            {
+                "citing_paper_id": "731b43a3d4bddbb17feb43ebb58fcc598e7c83cc",
+                "citation": [
+                    "As shown in Kim (2014), a dropout probability p of 0.5 is optimal for most scenarios.",
+                    "Three Input layers, one output layer and four hidden layers (Kim, 2014)."
+                ]
+            },
+            {
+                "citing_paper_id": "5db1d38d07786ca0e82e170a894d608531fd3296",
+                "citation": [
+                    "Figure 1: Taken from \u201dConvolutional neural networks for sentence classification\u201d [7]"
+                ]
+            },
+            {
+                "citing_paper_id": "0ab0956bd459606d9157889af12c3463a3694ca2",
+                "citation": [
+                    ", a convolutional neural network (CNN) from the paper \"Convolutional neural networks for sentence classification\" by [8]."
+                ]
+            },
+            {
+                "citing_paper_id": "f5b28cbee964d4339e6c56d057aff6735eca2289",
+                "citation": [
+                    "Recently, several papers have been published that involve convolutional neural networks (CNNs) for performing text classification without the need for manual feature engineering that achieved very promising results [8, 9]."
+                ]
+            },
+            {
+                "citing_paper_id": "8272fe0039ab8c5a2387d62d6135387dbe352927",
+                "citation": [
+                    "\u2026for various tasks in natural language processing, such as language modeling (Mikolov et al., 2010), text classification (Socher et al., 2013; Kim, 2014; Blunsom et al., 2014; Lee and Dernoncourt, 2016), question answering (Weston et al., 2015; Wang and Nyberg, 2015), machine translation\u2026"
+                ]
+            },
+            {
+                "citing_paper_id": "64eb312db70d97bf277b461ba0b34c9650f96859",
+                "citation": [
+                    "9: CNN for Sentence Classification, picture is taken from [35].",
+                    "Article [35] evaluates CNNs on various classification NLP problems."
+                ]
+            },
+            {
+                "citing_paper_id": "09bb75effb5bae628722e767048171085620ef8d",
+                "citation": [
+                    "Also, compared with other deep feedforward neural networks, CNN replaces conventional neuron matrix multiplication by convolution [45, 46], which can significantly reduce the number of unknown weights and is more suitable for the image and signal recognition [47]."
+                ]
+            },
+            {
+                "citing_paper_id": "7469f2d8cefd363cdd007aa82b8cfd0ad4f5a8bd",
+                "citation": [
+                    "Apesar de terem sido criadas inicialmente para vis\u00e3o computacional, elas t\u00eam demonstrado efici\u00eancia em tarefas de processamento de linguagem natural (NLP) [3]."
+                ]
+            },
+            {
+                "citing_paper_id": "9566528bf502e43914c4076fb71e48c0966d6622",
+                "citation": [
+                    ", 2016), TextCNN (Kim, 2014) and TextRCNN (Lai et al.",
+                    ", 2016), TextCNN (Kim, 2014) and HMCN (Wehrmann et al."
+                ]
+            }
+        ]
+    }
+]
